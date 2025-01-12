@@ -57,7 +57,7 @@ const config: Config = {
     },
     footer: {
       style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} ${title}, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${title}.`,
     },
     prism: {
       theme: prismThemes.github,
