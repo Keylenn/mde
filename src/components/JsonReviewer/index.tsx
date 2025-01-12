@@ -1,12 +1,13 @@
 import { useState } from "react";
 import ReactJson from "react-json-view";
-import useDomDataTheme from "../../helper/hooks/useDomDataTheme";
+// import useDomDataTheme from "../../helper/hooks/useDomDataTheme";
 import { readJsonFile } from "../../helper/util";
 import showToast from "../../helper/toast";
 import "./index.css";
 
 const JsonReviewer = () => {
-  const [theme] = useDomDataTheme();
+  //   const [theme] = useDomDataTheme();
+  const theme = "light";
   const [jsonData, setJsonData] = useState({});
 
   return (
