@@ -4,7 +4,14 @@
 
   "compilerOptions": {
     "baseUrl": ".",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types", "node_modules/@docusaurus"],
+    "paths": {
+      "@docusaurus/*": ["node_modules/@docusaurus/core/lib/client/*"],
+      "@site/*": ["./*"]
+    },
+    "resolveJsonModule": true
   },
   "exclude": [".docusaurus", "build"]
 }

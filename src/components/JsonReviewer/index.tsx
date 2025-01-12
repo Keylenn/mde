@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   showToast,
   readJsonFile,
   useDomDataTheme,
   useDynamicNpmComp,
-} from "../../helper/index";
+} from "@site/src/helper/index";
 import "./index.css";
 
 const JsonReviewer = () => {

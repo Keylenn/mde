@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, FC } from "react";
 import clsx from "clsx";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
@@ -41,7 +41,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+const HomepageFeatures: FC = () => {
   return (
     <section className={styles.features}>
       <div className="container">
@@ -53,4 +53,6 @@ export default function HomepageFeatures(): ReactNode {
       </div>
     </section>
   );
-}
+};
+
+export default HomepageFeatures;
