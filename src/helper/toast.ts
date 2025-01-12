@@ -69,6 +69,10 @@ function createToast(): (message: string, options?: ToastOptions) => void {
   return showToast;
 }
 
-const showToast = createToast();
+let showToast: null | ReturnType<typeof createToast> = null;
+
+if (typeof window !== "undefined" && !showToast) {
+  showToast = createToast();
+}
 
 export default showToast;
