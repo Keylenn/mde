@@ -1,13 +1,12 @@
 import { useState } from "react";
-import ReactJson from "react-json-view";
-// import useDomDataTheme from "../../helper/hooks/useDomDataTheme";
+// import ReactJson from "react-json-view";
+import useDomDataTheme from "../../helper/hooks/useDomDataTheme";
 import { readJsonFile } from "../../helper/util";
 import showToast from "../../helper/toast";
 import "./index.css";
 
 const JsonReviewer = () => {
-  //   const [theme] = useDomDataTheme();
-  const theme = "light";
+  const [theme] = useDomDataTheme();
   const [jsonData, setJsonData] = useState({});
 
   return (
@@ -27,7 +26,7 @@ const JsonReviewer = () => {
         accept=".json"
       />
 
-      <ReactJson
+      {/* <ReactJson
         src={jsonData}
         theme={theme === "light" ? "rjv-default" : "monokai"}
         onEdit={(edit) => {
@@ -39,7 +38,7 @@ const JsonReviewer = () => {
         onDelete={(del) => {
           console.log("删除内容:", del);
         }}
-      />
+      /> */}
     </>
   );
 };
