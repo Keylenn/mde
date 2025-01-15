@@ -32,3 +32,34 @@
 .github-entry svg {
   display: none;
 }
+
+.inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(0.97);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.97);
+  }
+}
+
+.breathe {
+  animation: breathe 1s ease-in-out infinite;
+}
+
+.primary-color {
+  color: var(--ifm-menu-color-active);
+}

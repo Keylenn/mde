@@ -1,0 +1,93 @@
+---
+sidebar_position: 1
+---
+
+# 介绍 🎊
+
+<h1
+  className="inline-flex-center"
+  style={{ cursor: "pointer" }}
+  onClick={() => window.open("https://github.com/Keylenn/boxly")}
+>
+  <img
+    referrerpolicy="no-referrer"
+    src="https://gitee.com/keylenn/cos/raw/master/imgs/@boxly-logo.png"
+    loading="lazy"
+    style={{ width: "1em" }}
+    className="breathe"
+  />
+  <span>Boxly是什么</span>
+</h1>
+
+---
+
+Boxly 是一种轻量级、快速的、<span className="primary-color">`框架无关`</span> 的数据管理方案。
+
+它推荐把数据按照 <span className="primary-color">`功能块`</span> 进行划分管理。即一个功能块对应一个容器 Box ，通过集中管理和更新该功能块的数据，提供了一种在子级功能之间共享数据的方式。
+
+如果你了解组件化开发，应该清楚，组件化开发推荐状态就近跟着组件走，同样地，我们也是推荐数据<span className="primary-color">`就近`</span>跟着功能块走，既方便管理，又保持了功能逻辑的清晰性。
+
+虽然它体小精悍（只有不到 <span className="primary-color">`2kB`</span> ，没有依赖），但可以帮助你快速开发出运行于不同的环境（客户端、服务器等）的应用。
+
+<br />
+
+# ✨ 特性
+
+---
+
+- **🎈 轻量简单**
+
+  - [API](/docs/front-end/data-management/boxly/api/create-box)足够简单
+  - 读写分离
+
+- **🗂 框架无关**
+
+  - 与 [React](/docs/front-end/data-management/boxly/ecology/react)集成，支持 React18+
+  - 与 [Node 服务](/docs/front-end/data-management/boxly/ecology/node) 集成
+
+- **🤝 支持[共享 Box](/docs/front-end/data-management/boxly/ecology/share)**
+
+  - 跨 iframe、应用共享数据
+
+- **🎨 支持快速拓展**
+
+  - 支持自动同步外部数据源
+  - 内置常用的数据源管理方案，如[Storage](/docs/front-end/data-management/boxly/api/create-storage-box)、[JsonBin](/docs/front-end/data-management/boxly/api/create-jsonbin-box)
+
+- **💡 类型提示友好**
+  - 友好的 ts 提示，让你开发更加轻松
+
+<br />
+
+# 📦 安装
+
+---
+
+安装<span className="primary-color">`@boxly/core`</span>， 下面以 npm 为例
+
+```bash
+npm i @boxly/core
+```
+
+<br />
+
+# ⚡ 快速开始
+
+---
+
+1. 定义一个 Box
+
+```ts
+import createBox from "@boxly/core";
+const counterBox = createBox(0);
+```
+
+2. 直接在对应功能块读写数据
+
+```ts
+const count = counterBox.getData();
+
+// 你可以定义对应Action修改数据，也可以直接使用setData修改
+const inc = () => counterBox.setData((c) => c + 1);
+const dec = () => counterBox.setData((c) => c - 1);
+```

@@ -63,7 +63,13 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    algolia: {
+      apiKey: "5b9e1b0bf7b576fc555a375e4736d665",
+      indexName: "mde-keylenn",
+      appId: "WWLY8VSHU4",
+      contextualSearch: true,
+      searchPagePath: "search",
+    },
   },
 };
-
 export default config;
