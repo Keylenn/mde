@@ -12,21 +12,23 @@ const CodeSandboxSandpack: FC<SandpackProps> = (props) => {
   });
 
   return (
-    <BrowserOnly>
-      {() => {
-        return (
-          <>
-            {Sandpack && (
-              <Sandpack
-                theme={theme === "light" ? githubLight : dracula}
-                {...props}
-              />
-            )}
-          </>
-        );
-      }}
-    </BrowserOnly>
+    <>
+      {Sandpack && (
+        <Sandpack
+          theme={theme === "light" ? githubLight : dracula}
+          {...props}
+        />
+      )}
+    </>
   );
 };
 
-export default CodeSandboxSandpack;
+const BrowserOnlyCodeSandboxSandpack: FC<SandpackProps> = (props) => (
+  <BrowserOnly>
+    {() => {
+      return <CodeSandboxSandpack {...props} />;
+    }}
+  </BrowserOnly>
+);
+
+export default BrowserOnlyCodeSandboxSandpack;
