@@ -3,11 +3,13 @@ import {
   showToast,
   readJsonFile,
   useDomDataTheme,
-  useDynamicNpmComp,
+  useDynamicComp,
 } from "@site/src/helper/index";
 import "./index.css";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { exportJsonFile } from "@site/src/helper/util";
+
+import { ReactJsonViewProps } from "react-json-view";
 
 const JsonReviewer = () => {
   const [theme] = useDomDataTheme();
@@ -16,7 +18,9 @@ const JsonReviewer = () => {
     uploadFileName: "",
   });
 
-  const ReactJson = useDynamicNpmComp(import("react-json-view"));
+  const ReactJson = useDynamicComp<ReactJsonViewProps | void>(
+    import("react-json-view")
+  );
 
   const handleSyncJsonData = (data: any) => {
     if (data?.updated_src) setJsonData(data.updated_src);

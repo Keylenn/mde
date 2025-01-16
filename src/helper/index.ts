@@ -1,4 +1,4 @@
-export { default as useDynamicNpmComp } from "./hooks/useDynamicNpmComp";
+export { default as useDynamicComp } from "./hooks/useDynamicComp";
 export { default as useDomDataTheme } from "./hooks/useDomDataTheme";
 
 export { default as showToast } from "./toast";

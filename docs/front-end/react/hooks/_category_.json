@@ -1,0 +1,8 @@
+{
+  "label": "Hooks",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "🔧 自定义Hook，让逻辑复用更容易"
+  }
+}
