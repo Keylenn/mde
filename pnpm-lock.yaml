@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@babel/parser': ^7.26.5
   '@codesandbox/sandpack-react': ^2.19.10
   '@codesandbox/sandpack-themes': ^2.0.21
   '@docusaurus/core': 3.7.0
@@ -13,7 +12,6 @@ specifiers:
   '@mdx-js/react': ^3.0.0
   '@types/react': ^19.0.4
   clsx: ^2.0.0
-  prettier: ^3.4.2
   prism-react-renderer: ^2.3.0
   react: ^19.0.0
   react-dom: ^19.0.0
@@ -21,7 +19,6 @@ specifiers:
   typescript: ~5.6.2
 
 dependencies:
-  '@babel/parser': 7.26.5
   '@codesandbox/sandpack-react': 2.19.10_upmzqgzhjrquwzo2dphtigtdgi
   '@codesandbox/sandpack-themes': 2.0.21
   '@docusaurus/core': 3.7.0_mvv35v3ds5nl5o7gfvx6gc5cji
@@ -29,7 +26,6 @@ dependencies:
   '@easyops-cn/docusaurus-search-local': 0.48.0_mvv35v3ds5nl5o7gfvx6gc5cji
   '@mdx-js/react': 3.1.0_2cgckn5icy4iidqnftpf7rt6u4
   clsx: 2.1.1
-  prettier: 3.4.2
   prism-react-renderer: 2.4.1_react@19.0.0
   react: 19.0.0
   react-dom: 19.0.0_react@19.0.0
@@ -9092,12 +9088,6 @@ packages:
       nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
-    dev: false
-
-  /prettier/3.4.2:
-    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
-    engines: {node: '>=14'}
-    hasBin: true
     dev: false
 
   /pretty-error/4.0.0:
