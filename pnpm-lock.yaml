@@ -13,6 +13,7 @@ specifiers:
   '@types/react': ^19.0.4
   clsx: ^2.0.0
   prism-react-renderer: ^2.3.0
+  raw-loader: ^4.0.2
   react: ^19.0.0
   react-dom: ^19.0.0
   react-json-view: ^1.21.3
@@ -27,6 +28,7 @@ dependencies:
   '@mdx-js/react': 3.1.0_2cgckn5icy4iidqnftpf7rt6u4
   clsx: 2.1.1
   prism-react-renderer: 2.4.1_react@19.0.0
+  raw-loader: 4.0.2
   react: 19.0.0
   react-dom: 19.0.0_react@19.0.0
   react-json-view: 1.21.3_t6ttn6bmcqcu5l3of46rw25zli
@@ -9217,6 +9219,16 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+    dev: false
+
+  /raw-loader/4.0.2:
+    resolution: {integrity: sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
     dev: false
 
   /rc/1.2.8:

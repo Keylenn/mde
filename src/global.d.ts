@@ -1,20 +1,42 @@
 declare module "@theme/Heading" {
-  const Heading: ComponentType<any>;
+  import type { Props } from "@theme/Heading";
+  const Heading: ComponentType<Props>;
   export default Heading;
 }
 
 declare module "@theme/Layout" {
-  const Layout: ComponentType<any>;
+  import type { Props } from "@theme/Layout";
+  const Layout: ComponentType<Props>;
   export default Layout;
 }
 declare module "@docusaurus/Link" {
-  const Link: ComponentType<any>;
+  import type { Props } from "@theme/Link";
+  const Link: ComponentType<Props>;
   export default Link;
 }
 
 declare module "@docusaurus/BrowserOnly" {
-  const BrowserOnly: ComponentType<any>;
+  import type { Props } from "@docusaurus/BrowserOnly";
+  const BrowserOnly: ComponentType<Props>;
   export default BrowserOnly;
+}
+
+declare module "@theme/Tabs" {
+  import type { Props } from "@theme/Tabs";
+  const Tabs: ComponentType<Props>;
+  export default Tabs;
+}
+
+declare module "@theme/TabItem" {
+  import type { Props } from "@theme/TabItem";
+  const TabItem: ComponentType<Props>;
+  export default TabItem;
+}
+
+declare module "@theme/CodeBlock" {
+  import type { Props } from "@theme/CodeBlock";
+  const CodeBlock: ComponentType<Props>;
+  export default CodeBlock;
 }
 
 declare module "@codesandbox/sandpack-themes" {

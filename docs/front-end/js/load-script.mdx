@@ -8,81 +8,24 @@ sidebar_position: 1
   动态加载脚本，支持缓存
 :::
 
-# 代码演示 🧐
+<br />
+<br />
 
+import {Demo, API, Impl} from "./_provider/load-script-demo"
+
+# 代码演示 🧐
+<Demo />
+
+<br />
+<br />
+
+# API 💡
+<API />
+
+
+
+<br />
+<br />
 
 # 代码实现 📝
-
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-
-<Tabs>
-  <TabItem value="ts" label="typescript">
-```ts
-const scriptCache = new Map(); // 缓存容器
-
-interface Option {
-  useCache?: boolean
-}
-
-function loadScript(url: string, { useCache = true }: Option = {}) {
-  if (useCache && scriptCache.has(url)) {
-    return scriptCache.get(url);
-  }
-
-  const promise = new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = url;
-    script.type = "text/javascript";
-    script.async = true;
-
-    script.onload = () => {
-      resolve();
-    };
-
-    script.onerror = () => {
-      reject(new Error(`Failed to load script: ${url}`));
-    };
-
-    document.head.appendChild(script);
-  });
-
-  useCache && scriptCache.set(url, promise);
-  return promise;
-}
-```
-  </TabItem>
-  
-  <TabItem value="js" label="javascript">
-```ts
-const scriptCache = new Map(); // 缓存容器
-
-function loadScript(url: string, { useCache = true } = {}) {
-  if (useCache && scriptCache.has(url)) {
-    return scriptCache.get(url);
-  }
-
-  const promise = new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = url;
-    script.type = "text/javascript";
-    script.async = true;
-
-    script.onload = () => {
-      resolve();
-    };
-
-    script.onerror = () => {
-      reject(new Error(`Failed to load script: ${url}`));
-    };
-
-    document.head.appendChild(script);
-  });
-
-  useCache && scriptCache.set(url, promise);
-  return promise;
-}
-```
-  </TabItem>
-</Tabs>
+<Impl />
