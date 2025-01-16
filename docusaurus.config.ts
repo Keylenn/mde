@@ -56,7 +56,7 @@ const config: Config = {
           href: "https://github.com/Keylenn/mde",
           label: "GitHub 🌟",
           position: "right",
-          className: "github-entry",
+          className: "github-entry breathe",
         },
       ],
     },
