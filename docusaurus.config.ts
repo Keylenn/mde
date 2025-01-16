@@ -63,13 +63,19 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    algolia: {
-      apiKey: "5b9e1b0bf7b576fc555a375e4736d665",
-      indexName: "mde-keylenn",
-      appId: "WWLY8VSHU4",
-      contextualSearch: true,
-      searchPagePath: "search",
-    },
   },
+
+  plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        indexDocs: true,
+        indexBlog: true,
+        language: ["en", "zh"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
 };
 export default config;

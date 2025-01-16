@@ -11,3 +11,14 @@ declare module "@docusaurus/Link" {
   const Link: ComponentType<any>;
   export default Link;
 }
+
+declare module "@docusaurus/BrowserOnly" {
+  const BrowserOnly: ComponentType<any>;
+  export default BrowserOnly;
+}
+
+declare module "@codesandbox/sandpack-themes" {
+  // 定义模块的类型
+  export const githubLight: any;
+  export const dracula: any;
+}
