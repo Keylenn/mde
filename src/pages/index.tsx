@@ -20,7 +20,7 @@ const HomepageHeader: FC = () => {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/tools/intro"
+            to="/docs/guide"
           >
             快速开始⚡️
           </Link>

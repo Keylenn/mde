@@ -1,4 +1,6 @@
 {
-  "label": "小工具 🧰",
-  "position": 1
+  "label": "工具专区 🧰",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": false
 }

@@ -48,6 +48,11 @@ const config: Config = {
       },
       items: [
         {
+          to: "/docs/front-end/data-management/boxly/intro",
+          label: "Boxly",
+          position: "left",
+        },
+        {
           href: "https://github.com/Keylenn/mde",
           label: "GitHub 🌟",
           position: "right",

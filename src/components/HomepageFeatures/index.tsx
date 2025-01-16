@@ -11,19 +11,23 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "更好用的工具 🧰",
-    Svg: require("@site/static/img/feature-tool.svg").default,
-    description: <>@TODO</>,
+    title: "功能实用化 🎯",
+    Svg: require("@site/static/img/tools.svg").default,
+    description: <>针对常见但市面上还没有最佳实践的场景提供可靠的解决方案</>,
   },
   {
-    title: "更好用的工具 🧰",
-    Svg: require("@site/static/img/feature-tool.svg").default,
-    description: <>@TODO</>,
+    title: "需求定制化 🏗",
+    Svg: require("@site/static/img/factory.svg").default,
+    description: <>我们提供通用的底层的功能实现，您自行结合需求场景进行定制</>,
   },
   {
-    title: "更好用的工具 🧰",
-    Svg: require("@site/static/img/feature-tool.svg").default,
-    description: <>@TODO</>,
+    title: "内容专区化 🗂",
+    Svg: require("@site/static/img/blocks.svg").default,
+    description: (
+      <>
+        把文档通过专区进行划分，既保留了功能的集中性，也兼顾了功能归属，方便大家快速定向查找
+      </>
+    ),
   },
 ];
 

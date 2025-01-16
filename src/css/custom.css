@@ -63,3 +63,48 @@
 .primary-color {
   color: var(--ifm-menu-color-active);
 }
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.4em 0.8em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--docusaurus-collapse-button-bg);
+  cursor: pointer;
+  color: var(--ifm-menu-color-active);
+}
+
+.jack-in-the-box {
+  animation: jack-in-the-box 2s ease-in-out;
+}
+
+@keyframes jack-in-the-box {
+  0% {
+    opacity: 0;
+    transform-origin: bottom;
+    transform: scale(0.1) rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.navbar__logo {
+  transition: transform 0.5s;
+}
+
+.navbar__brand:hover .navbar__logo {
+  transform: rotate(240deg) scale(0.9);
+}

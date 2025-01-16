@@ -1,4 +1,6 @@
 {
-  "label": "前端专区 👩‍🎨",
-  "position": 2
+  "label": "前端专区 🎨",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false
 }
