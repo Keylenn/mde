@@ -44,3 +44,8 @@ declare module "@codesandbox/sandpack-themes" {
   export const githubLight: any;
   export const dracula: any;
 }
+
+declare module "antd-style" {
+  // 定义模块的类型
+  export const ThemeProvider: ComponentType<any>;
+}

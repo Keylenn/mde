@@ -32,5 +32,5 @@ export default function useDomDataTheme(
     target.dataset[name] = newTheme;
   };
 
-  return [theme, toggleTheme];
+  return [theme, toggleTheme] as const;
 }
