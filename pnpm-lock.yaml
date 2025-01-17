@@ -12,6 +12,8 @@ specifiers:
   '@mdx-js/react': ^3.0.0
   '@types/react': ^19.0.4
   clsx: ^2.0.0
+  exec-sh: ^0.4.0
+  picocolors: ^1.1.1
   prism-react-renderer: ^2.3.0
   raw-loader: ^4.0.2
   react: ^19.0.0
@@ -27,6 +29,8 @@ dependencies:
   '@easyops-cn/docusaurus-search-local': 0.48.0_mvv35v3ds5nl5o7gfvx6gc5cji
   '@mdx-js/react': 3.1.0_2cgckn5icy4iidqnftpf7rt6u4
   clsx: 2.1.1
+  exec-sh: 0.4.0
+  picocolors: 1.1.1
   prism-react-renderer: 2.4.1_react@19.0.0
   raw-loader: 4.0.2
   react: 19.0.0
@@ -5768,6 +5772,10 @@ packages:
   /events/3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
+
+  /exec-sh/0.4.0:
+    resolution: {integrity: sha512-BgAFra+J+hK/wquyWchMiqgaxSv1ec2c+//DRSePlF3NLx/tBOmkIkJEc1hWrX4Yis3tzxgv1+FiFs/mmucs/g==}
+    dev: false
 
   /execa/5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}

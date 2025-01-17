@@ -6,9 +6,7 @@ interface Options {
   mouldeFilter?: (module: any) => any;
 }
 
-type CompPropsType = any;
-
-export default function useDynamicComp<T extends CompPropsType>(
+export default function useDynamicComp<T extends any>(
   modulePromise: Promise<any>,
   { fallback = null, errorFallback = null, mouldeFilter }: Options = {}
 ): React.ComponentType<T> | null {

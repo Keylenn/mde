@@ -29,3 +29,23 @@ export const exportJsonFile = (
   a.click();
   URL.revokeObjectURL(url);
 };
+
+export const extractTypeDeclarations = (tsCode: string) => {
+  const typeDeclarations = [];
+  const typeRegex = /type\s+(\w+)\s*=\s*{([^}]*?)}/g;
+  const interfaceRegex = /interface\s+(\w+)\s*{([\s\S]*?)\n}/gm;
+
+  // Extract type declarations
+  let match;
+
+  while ((match = typeRegex.exec(tsCode)) !== null) {
+    typeDeclarations.push(match[0]);
+  }
+
+  // Extract interface declarations
+  while ((match = interfaceRegex.exec(tsCode)) !== null) {
+    typeDeclarations.push(match[0]);
+  }
+
+  return typeDeclarations.join("\n");
+};
