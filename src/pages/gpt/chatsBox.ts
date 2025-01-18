@@ -7,7 +7,7 @@ export interface ChatsBoxType {
   chats: Chat[];
 }
 
-let chatsBox = null;
+let chatsBox = {};
 if (typeof window !== "undefined") {
   chatsBox = createStorageBox<ChatsBoxType | null>("mde_gpt_chats");
 }
