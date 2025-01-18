@@ -1,5 +1,3 @@
-"use client";
-
 import { ChatMessage } from "@ant-design/pro-chat";
 import { createStorageBox } from "@boxly/core";
 
@@ -9,9 +7,6 @@ export interface ChatsBoxType {
   chats: Chat[];
 }
 
-const chatsBox: ReturnType<typeof createStorageBox<ChatsBoxType | null>> =
-  typeof window !== "undefined"
-    ? createStorageBox("mde_gpt_chats")
-    : ({} as any);
+const chatsBox = createStorageBox<ChatsBoxType | null>("mde_gpt_chats");
 
 export default chatsBox;
