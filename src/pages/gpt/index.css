@@ -3,6 +3,12 @@
   background-color: var(--ifm-navbar-background-color);
   display: flex;
   flex-direction: column;
+  transition: visibility;
+  visibility: visible;
+}
+
+.gpt-content.hidden {
+  visibility: hidden;
 }
 
 .gpt-content .pro-chat {

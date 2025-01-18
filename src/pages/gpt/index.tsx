@@ -8,7 +8,7 @@ const GPT: FC = () => {
   const [loading, setLoading] = useState(true);
   return (
     <Layout title="MDE-GPT">
-      <div className={["gpt-content"].join(" ")} hidden={loading}>
+      <div className={["gpt-content", loading ? "hidden" : ""].join(" ")}>
         <ThemeProvider
           theme={{
             token: {
@@ -20,7 +20,6 @@ const GPT: FC = () => {
         >
           <ProChat
             className="pro-chat"
-            loading={loading}
             chatItemRenderConfig={{
               actionsRender: () => {
                 if (loading) {
