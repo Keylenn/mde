@@ -78,7 +78,7 @@ const GPT: FC = () => {
                     "Content-Type": "application/json",
                   },
                   body: JSON.stringify({
-                    messages: messages.slice(0, 8).map(({ content, role }) => ({
+                    messages: messages.slice(-8).map(({ content, role }) => ({
                       content,
                       role,
                     })),
