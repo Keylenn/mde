@@ -9,6 +9,9 @@ export interface ChatsBoxType {
   chats: Chat[];
 }
 
-const chatsBox = createStorageBox<ChatsBoxType | null>("mde_gpt_chats");
+const chatsBox: ReturnType<typeof createStorageBox<ChatsBoxType | null>> =
+  typeof window !== "undefined"
+    ? createStorageBox("mde_gpt_chats")
+    : ({} as any);
 
 export default chatsBox;
