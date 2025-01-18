@@ -1,10 +1,11 @@
 import Layout from "@theme/Layout";
 import { ProChat } from "@ant-design/pro-chat";
 import { ThemeProvider } from "antd-style";
-import { FC } from "react";
+import { FC, useState } from "react";
 import "./index.css";
 
 const GPT: FC = () => {
+  const [loading, setLoading] = useState(true);
   return (
     <Layout title="MDE-GPT">
       <div className={["gpt-content"].join(" ")}>
@@ -19,8 +20,16 @@ const GPT: FC = () => {
         >
           <ProChat
             className="pro-chat"
+            loading={loading}
             chatItemRenderConfig={{
-              actionsRender: () => <></>,
+              actionsRender: () => {
+                if (loading) {
+                  setTimeout(() => {
+                    setLoading(false);
+                  }, 1000);
+                }
+                return <></>;
+              },
             }}
             showTitle
             assistantMeta={{
@@ -36,6 +45,8 @@ const GPT: FC = () => {
               const mockedData = `💪  MDE正在努力接入API中... 敬请期待！`;
               return new Response(mockedData);
             }}
+            onChatStart={console.log}
+            onChatGenerate={console.warn}
           />
         </ThemeProvider>
       </div>
