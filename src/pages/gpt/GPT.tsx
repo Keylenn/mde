@@ -2,9 +2,19 @@ import Layout from "@theme/Layout";
 import { ProChat, ProChatInstance } from "@ant-design/pro-chat";
 import { ThemeProvider } from "antd-style";
 import { FC, useState, useRef } from "react";
-import chatsBox, { Chat } from "./chatsBox";
 import "./index.css";
 import { VERCEL_FUNS_API_ORIGIN } from "@site/src/config";
+
+import { ChatMessage } from "@ant-design/pro-chat";
+import { createStorageBox } from "@boxly/core";
+
+export type Chat = ChatMessage<Record<string, any>>;
+
+export interface ChatsBoxType {
+  chats: Chat[];
+}
+
+const chatsBox = createStorageBox<ChatsBoxType | null>("mde_gpt_chats");
 
 const MAX_LENGTH = 100;
 const ERROR_CONTENT = "MDE出现了点问题😭 请晚点再试试";
