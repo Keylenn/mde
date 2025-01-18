@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "@theme/Layout";
 import { ProChat, ProChatInstance } from "@ant-design/pro-chat";
 import { ThemeProvider } from "antd-style";

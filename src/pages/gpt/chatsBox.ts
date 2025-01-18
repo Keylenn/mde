@@ -1,3 +1,5 @@
+"use client";
+
 import { ChatMessage } from "@ant-design/pro-chat";
 import { createStorageBox } from "@boxly/core";
 
