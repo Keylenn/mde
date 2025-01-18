@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ant-design/pro-chat': ^1.15.3
+  '@boxly/core': ^1.2.0-beta.1
   '@codesandbox/sandpack-react': ^2.19.10
   '@codesandbox/sandpack-themes': ^2.0.21
   '@docusaurus/core': 3.7.0
@@ -25,6 +26,7 @@ specifiers:
 
 dependencies:
   '@ant-design/pro-chat': 1.15.3_gbsjcsu6wgrtya34scn7i43b3u
+  '@boxly/core': 1.2.0-beta.1
   '@codesandbox/sandpack-react': 2.19.10_upmzqgzhjrquwzo2dphtigtdgi
   '@codesandbox/sandpack-themes': 2.0.21
   '@docusaurus/core': 3.7.0_mvv35v3ds5nl5o7gfvx6gc5cji
@@ -1599,6 +1601,10 @@ packages:
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
+    dev: false
+
+  /@boxly/core/1.2.0-beta.1:
+    resolution: {integrity: sha512-Cd5A4Hsmr07LKItmBgRsmMNKLZsT8SYlIhdaI+4anK/x1TANaeTxccJLoiTOjBWag3fJsltmazqLMrGQJE1l2Q==}
     dev: false
 
   /@codemirror/autocomplete/6.18.4:
