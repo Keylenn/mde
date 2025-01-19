@@ -48,6 +48,11 @@ const config: Config = {
       },
       items: [
         {
+          to: "/chat",
+          label: "Chat",
+          position: "left",
+        },
+        {
           to: "/docs/front-end/data-management/boxly/intro",
           label: "Boxly",
           position: "left",

@@ -1,37 +1,37 @@
-.gpt-page .footer {
+.chat-page .footer {
   display: none;
 }
-.gpt-content {
+.chat-content {
   background-color: var(--ifm-navbar-background-color);
   transition: visibility;
   visibility: visible;
   height: calc(100vh - var(--ifm-navbar-height));
 }
 
-.gpt-content.hidden {
+.chat-content.hidden {
   visibility: hidden;
 }
 
-.gpt-content .pro-chat .anticon svg {
+.chat-content .pro-chat .anticon svg {
   color: var(--ifm-menu-color-active);
 }
 
-.gpt-content .ant-pro-chat-list-item-title {
+.chat-content .ant-pro-chat-list-item-title {
   color: var(--ifm-font-color-base);
 }
 
-.gpt-content .ant-pro-chat-message-content {
+.chat-content .ant-pro-chat-message-content {
   border-radius: 0.5em;
   background: var(--ifm-navbar-search-input-background-color) !important;
 }
-.gpt-content .layoutkit-flexbox {
+.chat-content .layoutkit-flexbox {
   background: transparent;
 }
 
-.gpt-content .ant-pro-chat-input-area-component-textarea {
+.chat-content .ant-pro-chat-input-area-component-textarea {
   background-color: var(--ifm-navbar-search-input-background-color);
 }
 
-.gpt-content .ant-input-outlined:focus {
+.chat-content .ant-input-outlined:focus {
   box-shadow: 0 0 0 2px var(--ifm-menu-color-active);
 }

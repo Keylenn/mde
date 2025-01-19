@@ -17,13 +17,13 @@ export interface ChatsBoxType {
 const chatsBox =
   typeof window === "undefined"
     ? createBox(null)
-    : createStorageBox<ChatsBoxType | null>("mde_gpt_chats");
+    : createStorageBox<ChatsBoxType | null>("mde_chats");
 
 const MAX_LENGTH = 100;
 const ERROR_CONTENT = "MDE出现了点问题😭 请晚点再试试";
 const isErrorContent = (content: string) => content === ERROR_CONTENT;
 
-const GPT: FC = () => {
+const ChatComponent: FC = () => {
   const [loading, setLoading] = useState(true);
   const chatRef = useRef<ProChatInstance>(null);
   const addChat = (message: Chat) => {
@@ -35,9 +35,9 @@ const GPT: FC = () => {
     });
   };
   return (
-    <div className="gpt-page">
-      <Layout title="MDE-GPT">
-        <div className={["gpt-content", loading ? "hidden" : ""].join(" ")}>
+    <div className="chat-page">
+      <Layout title="MDE-Chat">
+        <div className={["chat-content", loading ? "hidden" : ""].join(" ")}>
           <ThemeProvider
             theme={{
               token: {
@@ -72,10 +72,10 @@ const GPT: FC = () => {
               }}
               helloMessage={"欢迎使用 MDE Chat"}
               request={async (messages) => {
-                const json = await fetch(`${VERCEL_FUNS_API_ORIGIN}/api/gpt`, {
+                const json = await fetch(`${VERCEL_FUNS_API_ORIGIN}/api/chat`, {
                   method: "POST",
                   headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json;charset=UTF-8",
                   },
                   body: JSON.stringify({
                     messages: messages.slice(-8).map(({ content, role }) => ({
@@ -86,14 +86,15 @@ const GPT: FC = () => {
                 })
                   .then((r) => r.json())
                   .catch(console.error);
-
                 const content =
                   json?.choices?.[0]?.message?.content ?? ERROR_CONTENT;
-
                 const response = new Response(content);
                 const chat = messages?.at(-1);
                 if (chat) addChat(chat);
                 return response;
+              }}
+              onChatStart={() => {
+                chatRef.current?.scrollToBottom();
               }}
               onChatEnd={(id) => {
                 setTimeout(() => {
@@ -113,4 +114,4 @@ const GPT: FC = () => {
   );
 };
 
-export default GPT;
+export default ChatComponent;

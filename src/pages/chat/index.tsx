@@ -3,9 +3,9 @@ import { FC } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const Page: FC = () => {
-  const GPT = useDynamicComp(import("./GPT"));
+  const ChatComp = useDynamicComp(import("./Chat"));
 
-  return <>{GPT && <GPT />}</>;
+  return <>{ChatComp && <ChatComp />}</>;
 };
 
 const BrowserOnlyPage: FC = () => (
