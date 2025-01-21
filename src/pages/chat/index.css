@@ -35,3 +35,8 @@
 .chat-content .ant-input-outlined:focus {
   box-shadow: 0 0 0 2px var(--ifm-menu-color-active);
 }
+
+.chat-content .model-entry {
+  color: var(--ifm-menu-color-active);
+  font-weight: bold;
+}

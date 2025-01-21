@@ -17,6 +17,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.2",
     "@ant-design/pro-chat": "^1.15.3",
     "@boxly/core": "^1.2.0-beta.1",
     "@codesandbox/sandpack-react": "^2.19.10",
@@ -24,7 +25,6 @@
     "@docusaurus/core": "3.7.0",
     "@docusaurus/preset-classic": "3.7.0",
     "@mdx-js/react": "^3.0.0",
-    "ai": "^4.1.0",
     "antd": "^5.23.1",
     "antd-style": "^3.7.1",
     "clsx": "^2.0.0",
