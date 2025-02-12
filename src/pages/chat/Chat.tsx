@@ -14,6 +14,14 @@ import { showToast } from "@site/src/helper";
 
 const items = [
   {
+    label: "kimi (支持联网)",
+    key: "kimi",
+  },
+  {
+    label: "kimi-pro (深度思考)",
+    key: "kimi-pro",
+  },
+  {
     label: "glm-4-flash (支持联网)",
     key: "glm-4-flash",
   },
@@ -51,6 +59,7 @@ const ChatComponent: FC = () => {
 
     return m;
   });
+  const isKimiLike = model.includes("kimi");
   const [loading, setLoading] = useState(true);
   const chatRef = useRef<ProChatInstance>(null);
   const addChat = (message: Chat) => {
@@ -79,19 +88,19 @@ const ChatComponent: FC = () => {
     return new Response(content);
   };
 
-  const handelStreamRequest: ChatRequest = async (messages) => {
-    const response = await fetch(
-      "https://chat-pro-express.glitch.me/chat-pro",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify({
-          messages,
-        }),
-      }
-    );
+  const handelStreamRequest: any = async (
+    messages,
+    url = "https://chat-pro-express.glitch.me/chat-pro"
+  ) => {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      body: JSON.stringify({
+        messages,
+      }),
+    });
 
     // 确保服务器响应是成功的
     if (!response.ok || !response.body) {
@@ -133,30 +142,46 @@ const ChatComponent: FC = () => {
   };
 
   const handleChatRequest: ChatRequest = async (messages) => {
-    let request = null;
-    switch (model) {
-      case "glm-4-flash":
-        request = handelJsonRequest;
-        break;
-      case "gpt-3.5":
-        request = handelStreamRequest;
-        break;
+    try {
+      const params: any[] = [
+        messages.slice(isKimiLike ? -1 : -3).map(({ content, role }) => ({
+          content,
+          role,
+        })),
+      ];
+      let request = null;
+      switch (model) {
+        case "glm-4-flash":
+          request = handelJsonRequest;
+          break;
+        case "gpt-3.5":
+        case "kimi":
+        case "kimi-pro":
+          request = handelStreamRequest;
+
+          if (isKimiLike) {
+            params.push(
+              `https://kimi-chat-express.glitch.me/chat${
+                model === "kimi-pro" ? "-pro" : ""
+              }-stream`
+            );
+          }
+          break;
+      }
+
+      if (!request) {
+        return showToast("MDE 遇到了点问题😭");
+      }
+
+      const result = await request.apply(null, params);
+
+      const chat = messages?.at(-1);
+      if (chat) addChat(chat);
+
+      return result;
+    } catch (error) {
+      return new Response(ERROR_CONTENT);
     }
-    if (!request) {
-      return showToast("MDE 遇到了点问题😭");
-    }
-
-    const result = await request(
-      messages.slice(-3).map(({ content, role }) => ({
-        content,
-        role,
-      }))
-    );
-
-    const chat = messages?.at(-1);
-    if (chat) addChat(chat);
-
-    return result;
   };
   return (
     <div className="chat-page">
